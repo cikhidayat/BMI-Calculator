@@ -1,0 +1,88 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() {
+	
+	char nama[90], jk;
+	double tb, bb, bmi;
+	
+	cout<<"=================================================="<<endl;
+	cout<<"            Calculator BMI Versi 1.0 "<<endl;
+	cout<<" "<<endl;
+	cout<<" Created by       : Rahmat Hidayat"<<endl;
+	cout<<" Visit my website : www.cikhidayat.com"<<endl;	
+	cout<<"=================================================="<<endl;
+	cout<<"            Isi Data Berikut"<<endl;
+	cout<<"=================================================="<<endl;
+	cout<<" Nama Panggilan         : "; cin>>nama;
+	cout<<" Jenis kelamin (L/P)    : "; cin>>jk;
+	cout<<" Berat badan (Kilogram) : "; cin>>bb;
+	cout<<" Tinggi badan (meter)   : "; cin>>tb;
+	cout<<"=================================================="<<endl;
+	cout<<"=================================================="<<endl;
+	cout<<"            Hasil Perhitungan"<<endl;
+	cout<<"=================================================="<<endl;
+	cout<<" Nama Panggilan         : "; cout<<nama<<endl;
+	cout<<" Jenis Kelamin          : ";
+	//Penggunaan if untuk menuliskan jenis kelamin
+		if (jk=='L' || jk=='l') {
+			cout<<"Laki-laki"<<endl;
+		}
+		if (jk=='P' || jk=='p') {
+			cout<<"Perempuan"<<endl;
+		}
+	cout<<" Berat badan            : "<<bb<<" Kilogram"<<endl;
+	cout<<" Tinggi badan           : "<<tb<<" Meter"<<endl;
+	
+	//Rumus BMI
+	bmi = bb/(tb*tb);
+	
+	cout<<" BMI anda               : "<<bmi<<endl;
+	cout<<" Kategori               : ";
+	//Penentuan kategori berdasarkan rumus BMI
+	//Untuk laki-laki
+		if (jk=='L' ||jk=='l') {
+			if (bmi<17) {
+				cout<<"Kurus"<<endl;
+			}
+			if (bmi>=17) {
+				if (bmi<23) {
+					cout<<"Normal"<<endl;
+				}
+			}
+			if (bmi>=23) {
+				if (bmi<=27) {
+					cout<<"Kegemukan"<<endl;
+				}
+			}
+			if (bmi>27) {
+				cout<<"Obesitas"<<endl;
+			}
+		}
+	
+	//Untuk Perempuan
+		if (jk=='P' ||jk=='p') {
+			if (bmi<18) {
+				cout<<"Kurus"<<endl;
+			}
+			if (bmi>=18) {
+				if (bmi<25) {
+					cout<<"Normal"<<endl;
+				}
+			}
+			if (bmi>=25) {
+				if (bmi<=27) {
+					cout<<"Kegemukan"<<endl;
+				}
+			}
+			if (bmi>27) {
+				cout<<"Obesitas"<<endl;
+			}
+		}
+	cout<<endl;
+	cout<<" Press Any Key to Exit...";
+	getch();
+	
+	return 0;
+}
